@@ -1,3 +1,7 @@
+#include<vector> // Added required header for using vector and sort() function
+#include<algorithm>
+
+using namespace std;
 
 class Solution {
 public:
@@ -26,7 +30,7 @@ public:
                         left++;
 
                     // BUG HERE ↓
-                    while (left < right && nums[right] == nums[right - 1])
+                    while (left < right && nums[right] == nums[right + 1]) // BUG Fix: Corrected the condition to check for duplicates on the right side
                         right--;
                 }
                 else if (sum < 0) {
